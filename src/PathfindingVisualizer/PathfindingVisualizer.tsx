@@ -12,15 +12,22 @@ export default class PathfindingVisualizer extends Component {
 
   componentDidMount() {
     const nodes = [];
-    for (let row = 0; row < 15; row++) {
+    for (let row = 0; row < 20; row++) {
       const currentRow = [];
       for (let col = 0; col < 50; col++) {
-        currentRow.push([]);
+        const currentNode = {
+          col,
+          row,
+          isStart: row === 10 && col === 5,
+          isFinish: row === 10 && col === 45,
+        };
+        currentRow.push(currentNode);
       }
       nodes.push(currentRow);
     }
     this.setState({ nodes });
   }
+
   render() {
     // @ts-ignore
     const { nodes } = this.state;
@@ -31,7 +38,11 @@ export default class PathfindingVisualizer extends Component {
           return (
             <div>
               {row.map((node, nodeIdx) => {
-                return <Node />;
+                const { isStart, isFinish } = node;
+                return (
+                  // @ts-ignore
+                  <Node key={nodeIdx} isStart={isStart} isFinish={isFinish} />
+                );
               })}
             </div>
           );
