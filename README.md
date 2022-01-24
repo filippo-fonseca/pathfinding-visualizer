@@ -10,4 +10,4 @@ As found on the web, Dijkstra's algorithm to find the shortest path between a an
 
 ###### Inspired by [Clement M.](https://www.youtube.com/watch?v=msttfIHHkak&t=654s)
 
-Written in TypeScript * React with ❤️ by [**@FilippoFonseca**](https://twitter.com/FilippoFonseca).
+Written in TypeScript & React with ❤️ by [**@FilippoFonseca**](https://twitter.com/FilippoFonseca).
